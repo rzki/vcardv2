@@ -5,14 +5,14 @@
         </a>
 
         <ul class="sidebar-nav">
-            <li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+            <li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}" wire:navigate>
                 <a class="sidebar-link" href="{{ route('dashboard') }}">
-                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">{{ __('Dashboard') }}</span>
                 </a>
             </li>
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
-                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Page 1</span>
+            <li class="sidebar-item {{ request()->routeIs('users.*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('users.index') }}" wire:navigate>
+                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ __('Users') }}</span>
                 </a>
             </li>
             <li class="sidebar-item">

@@ -2,12 +2,13 @@
 
 namespace App\Livewire\Users;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Title;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
-use Livewire\Attributes\Title;
 
 class UserCreate extends Component
 {
@@ -15,7 +16,7 @@ class UserCreate extends Component
     public function create()
     {
         $user = User::create([
-            'userId' => Str::orderedUuid(),
+            'userId' => Carbon::now()->getTimestampMs().mt_rand('10000000000000', '99999999999999'),
             'name' => $this->name,
             'email' => $this->email,
             'password' => Hash::make('vCard2024!')

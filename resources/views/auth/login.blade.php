@@ -2,7 +2,7 @@
 @section('title', 'Login')
 @section('content')
     <div class="mt-4 text-center">
-        <h1 class="mb-4 h2">Laravel Boilerplate</h1>
+        <h1 class="mb-4 h2">{{ env('APP_NAME').' - Login' }}</h1>
     </div>
 
     <div class="card">

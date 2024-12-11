@@ -16,7 +16,7 @@ class UserCreate extends Component
     public function create()
     {
         $user = User::create([
-            'userId' => Carbon::now()->getTimestampMs().mt_rand('10000000000000', '99999999999999'),
+            'userId' => Str::orderedUuid(),
             'name' => $this->name,
             'email' => $this->email,
             'password' => Hash::make('vCard2024!')

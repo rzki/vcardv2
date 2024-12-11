@@ -28,7 +28,7 @@ class ContactCreate extends Component
         $vCard .= "TEL;TYPE=WORK:{$this->phone_number2}\n";
         $vCard .= "EMAIL:{$this->email}\n";
         $vCard .= "END:VCARD";
-        $uuid = Carbon::now()->getTimestampMs().mt_rand('10000000000000', '99999999999999');
+        $uuid = Str::orderedUuid();
         $qr = new DNS2D();
         $qr = base64_decode($qr->getBarcodePNG($vCard, 'QRCODE'));
         $path = 'img/vcard/' . $uuid . '.png';
